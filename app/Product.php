@@ -27,11 +27,6 @@ class Product extends Model
     	return $this->status == Product::PRODUCTO_DISPONIBLE;
     }
 
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
-    }
-
     public function seller()
     {
         return $this->belongsTo(Seller::class);
@@ -41,4 +36,10 @@ class Product extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+  
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
 }
