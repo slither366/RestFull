@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();   
+        $usuarios = User::all();
         //return $usuarios;
         return response()->json(['data' => $usuarios],200);
     }
@@ -31,7 +31,7 @@ class UserController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
+            'password' => 'required|min:6|confirmed'//password_confirmation = ''
         ];
 
         $this->validate($request, $rules);

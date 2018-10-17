@@ -40,7 +40,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',//token recuerda cuando el usuario inicia sesion y si este debe mantenerse
-        'verification_token',//nadie ni un administrador podr tener acceso al token de verificacion de un usuario especifico.
+        'verification_token',//nadie ni un administrador podra tener acceso al token de verificacion de un usuario especifico.
     ];
 
     public function esVerificado()

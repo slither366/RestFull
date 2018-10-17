@@ -26,9 +26,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'verification_token' => $verificado == User::USUARIO_VERIFICADO ? null : User::generarVerificationToken(),
         'admin' => $faker->randomElement([User::USUARIO_ADMINISTRADOR, User::USUARIO_REGULAR]),
     ];
-
 });
-
 
 $factory->define(App\Category::class, function (Faker $faker) {
     return [
