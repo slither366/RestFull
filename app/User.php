@@ -32,6 +32,22 @@ class User extends Authenticatable
         'admin',//permite saber si es administrador
     ];
 
+    // Creando mutadores para guardar la información en minusculas
+    public function setNameAttribute($valor){
+        $this->attributes['name'] = strtolower($valor);
+    }
+    
+    // Creando mutadores para guardar la información en minusculas
+    public function setEmailAttribute($valor){
+        $this->attributes['email'] = strtolower($valor);
+    }
+
+    // Creando accesor para visualizar la información en el postman
+    public function getNameAttribute($valor){
+        //return ucfirst($valor); Cambia a mayuscula la Primera letra de la frase
+        return ucwords($valor); //Cambia a mayuscula la Primera letra de cada palabra
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
